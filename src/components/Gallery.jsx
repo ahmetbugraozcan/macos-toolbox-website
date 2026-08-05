@@ -1,12 +1,16 @@
 import Reveal from "./Reveal.jsx";
+import CaptureMockup from "./mockups/CaptureMockup.jsx";
 import ShelfMockup from "./mockups/ShelfMockup.jsx";
+import VideoCaptureMockup from "./mockups/VideoCaptureMockup.jsx";
 import DropShelfMockup from "./mockups/DropShelfMockup.jsx";
 import ImageSearchMockup from "./mockups/ImageSearchMockup.jsx";
 import MenuBarMockup from "./mockups/MenuBarMockup.jsx";
 import SettingsMockup from "./mockups/SettingsMockup.jsx";
 
 const frames = [
+  { title: "Capture Selected Area", caption: "Screenshot exactly the region you need.", Visual: CaptureMockup },
   { title: "Screenshot Shelf", caption: "Captures stack up, ready to drag out.", Visual: ShelfMockup },
+  { title: "Video Recording", caption: "Record a selected area with the native macOS flow.", Visual: VideoCaptureMockup },
   { title: "Image Search", caption: "Find any screenshot by the text inside it.", Visual: ImageSearchMockup },
   { title: "Drop Shelf", caption: "A staging tray for anything you drag.", Visual: DropShelfMockup },
   { title: "Menu bar", caption: "One tidy menu, zero window clutter.", Visual: MenuBarMockup },

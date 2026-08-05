@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
-import ShelfMockup from "./mockups/ShelfMockup.jsx";
+import MainFeatureMockup from "./mockups/MainFeatureMockup.jsx";
 import { DMG_URL, VERSION } from "../config.js";
 
 export default function Hero() {
@@ -26,8 +26,9 @@ export default function Hero() {
         </motion.h1>
         <motion.p className="lede hero-lede" {...rise(0.12)}>
           DeskCast lives quietly in your menu bar. Snap a region into a floating
-          shelf, gather files onto a drop tray, and search every screenshot by
-          its text — all in a single, focused little app.
+          shelf, record a selected area, gather files onto a drop tray, and
+          search every screenshot by its text — all in a single, focused little
+          app.
         </motion.p>
 
         <motion.div className="hero-actions" {...rise(0.18)}>
@@ -54,7 +55,7 @@ export default function Hero() {
           }
         >
           <div className="hero-desktop" aria-hidden="true">
-            <ShelfMockup />
+            <MainFeatureMockup />
           </div>
         </motion.div>
       </div>
