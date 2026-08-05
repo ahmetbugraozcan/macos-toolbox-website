@@ -22,4 +22,4 @@ npm run build
 
 The screenshots and demo video in `public/` are captured from the real DeskCast macOS application. The app icon source is shared with the native app's `AppIcon.appiconset`.
 
-The download button points at the latest `DeskCast.dmg` published by the app repository's release workflow.
+The download button points at the app repository's Releases page, where the release workflow publishes `DeskCast.dmg`.
