@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
 import Reveal from "./Reveal.jsx";
+import { useI18n } from "../i18n.jsx";
 
 export default function VideoSection() {
   const ref = useRef(null);
   const [playing, setPlaying] = useState(false);
+  const { t } = useI18n();
 
   const play = () => {
     const v = ref.current;
@@ -16,11 +18,9 @@ export default function VideoSection() {
       <div className="wrap">
         <Reveal>
           <p className="eyebrow" style={{ textAlign: "center" }}>
-            See it move
+            {t("video.eyebrow")}
           </p>
-          <h2 className="headline video-title">
-            Thirty seconds of everyday flow.
-          </h2>
+          <h2 className="headline video-title">{t("video.title")}</h2>
         </Reveal>
 
         <Reveal delay={0.08}>
@@ -35,13 +35,13 @@ export default function VideoSection() {
               preload="metadata"
             />
             {!playing && (
-              <button className="video-play" onClick={play} aria-label="Play DeskCast demo">
+              <button className="video-play" onClick={play} aria-label={t("video.play")}>
                 <span className="video-play-glyph">▶</span>
-                <span className="video-play-label">Watch the real app</span>
+                <span className="video-play-label">{t("video.play")}</span>
               </button>
             )}
           </div>
-          <p className="video-note muted">Captured directly from DeskCast on macOS.</p>
+          <p className="video-note muted">{t("video.note")}</p>
         </Reveal>
       </div>
     </section>
