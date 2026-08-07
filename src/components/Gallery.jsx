@@ -1,4 +1,3 @@
-import { useRef, useEffect } from "react";
 import Reveal from "./Reveal.jsx";
 import CaptureMockup from "./mockups/CaptureMockup.jsx";
 import ShelfMockup from "./mockups/ShelfMockup.jsx";
@@ -19,29 +18,11 @@ const frames = [
   { key: "settings", Visual: SettingsMockup },
 ];
 
+// Duplicate frames to create a seamless looping marquee
+const doubleFrames = [...frames, ...frames];
+
 export default function Gallery() {
   const { t } = useI18n();
-  const railRef = useRef(null);
-
-  // Let a vertical mouse wheel scroll the horizontal rail, but hand control back
-  // to the page once the rail reaches an edge (so it never traps the scroll).
-  // Horizontal trackpad swipes are left untouched.
-  useEffect(() => {
-    const rail = railRef.current;
-    if (!rail) return undefined;
-
-    const onWheel = (e) => {
-      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
-      const atStart = rail.scrollLeft <= 0;
-      const atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 1;
-      if ((e.deltaY < 0 && atStart) || (e.deltaY > 0 && atEnd)) return;
-      e.preventDefault();
-      rail.scrollLeft += e.deltaY;
-    };
-
-    rail.addEventListener("wheel", onWheel, { passive: false });
-    return () => rail.removeEventListener("wheel", onWheel);
-  }, []);
 
   return (
     <section className="section gallery" id="gallery">
@@ -54,10 +35,10 @@ export default function Gallery() {
         </Reveal>
       </div>
 
-      <div className="gallery-rail" ref={railRef}>
+      <div className="gallery-rail">
         <div className="gallery-track">
-          {frames.map((f, i) => (
-            <Reveal className="gcard" key={f.key} delay={i * 0.05}>
+          {doubleFrames.map((f, i) => (
+            <div className="gcard" key={`${f.key}-${i}`}>
               <div className="gcard-stage">
                 <f.Visual />
               </div>
@@ -65,7 +46,7 @@ export default function Gallery() {
                 <h3 className="title gcard-title">{t(`gallery.names.${f.key}`)}</h3>
                 <p className="muted">{t(`gallery.captions.${f.key}`)}</p>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>
@@ -73,3 +54,4 @@ export default function Gallery() {
     </section>
   );
 }
+

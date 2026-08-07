@@ -676,24 +676,32 @@
 .gallery-title { text-align: center; margin-top: 10px; }
 .gallery-rail {
   margin-top: clamp(36px, 5vw, 60px);
-  overflow-x: auto;
-  overflow-y: hidden;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: 8px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  user-select: none;
+  pointer-events: auto;
 }
-.gallery-rail::-webkit-scrollbar { display: none; }
 .gallery-track {
   display: flex;
   gap: 22px;
-  padding-inline: max(24px, calc((100vw - var(--maxw)) / 2 + 24px));
   width: max-content;
+  animation: galleryMarquee 35s linear infinite;
+  will-change: transform;
+}
+.gallery-rail:hover .gallery-track {
+  animation-play-state: paused;
+}
+@keyframes galleryMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 11px));
+  }
 }
 .gcard {
-  scroll-snap-align: center;
-  width: min(420px, 82vw);
+  width: min(380px, 80vw);
   flex: none;
 }
 .gcard-stage {
@@ -711,6 +719,10 @@
 .gcard-meta { padding: 18px 4px 0; }
 .gcard-title { margin-bottom: 4px; }
 .gallery-hint { text-align: center; margin-top: 22px; font-size: 0.85rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-track { animation-play-state: paused; }
+}
 
 /* ==================== VIDEO ==================== */
 .video { background: #000; color: #f5f5f7; text-align: center; }

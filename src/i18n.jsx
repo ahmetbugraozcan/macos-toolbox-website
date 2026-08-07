@@ -52,7 +52,7 @@ const dict = {
     gallery: {
       eyebrow: "A closer look",
       title: "Small app. Surprising range.",
-      hint: "Scroll sideways →",
+      hint: "Hover to pause ⏸",
       captions: {
         capture: "Screenshot exactly the region you need.",
         shelf: "Captures stack up, ready to drag out.",
@@ -144,7 +144,7 @@ const dict = {
     gallery: {
       eyebrow: "Yakından bak",
       title: "Küçük uygulama. Şaşırtıcı kapsam.",
-      hint: "Yana kaydır →",
+      hint: "Durdurmak için üzerine gelin ⏸",
       captions: {
         capture: "Tam ihtiyacın olan bölgeyi yakala.",
         shelf: "Yakalamalar üst üste birikir, sürüklemeye hazır.",
