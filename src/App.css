@@ -677,6 +677,8 @@
 .gallery-rail {
   margin-top: clamp(36px, 5vw, 60px);
   overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
