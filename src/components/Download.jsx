@@ -1,10 +1,12 @@
 import Reveal from "./Reveal.jsx";
 import Logo from "./Logo.jsx";
-import { DMG_URL, VERSION } from "../config.js";
+import { DMG_URL } from "../config.js";
 import { useI18n } from "../i18n.jsx";
+import { useLatestVersion } from "../useLatestVersion.js";
 
 export default function Download() {
   const { t } = useI18n();
+  const version = useLatestVersion();
   const steps = t("download.steps") || [];
 
   return (
@@ -24,7 +26,7 @@ export default function Download() {
             </a>
           </div>
           <p className="download-meta">
-            {t("download.meta", { v: VERSION })}
+            {t("download.meta", { v: version })}
             <span className="muted-2">{t("download.metaMuted")}</span>
           </p>
         </Reveal>

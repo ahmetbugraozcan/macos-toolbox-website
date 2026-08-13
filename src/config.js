@@ -1,6 +1,4 @@
-// Direct download of the notarized .dmg from the newest published release.
-// GitHub's /releases/latest/download/<asset> always resolves to the latest
-// (non-prerelease) release, so this stays correct across builds.
-export const DMG_URL = "https://github.com/ahmetbugraozcan/macos-toolbox/releases/latest/download/DeskCast.dmg";
-export const VERSION = "1.0";
-export const GITHUB_URL = "https://github.com/ahmetbugraozcan/macos-toolbox";
+export const GITHUB_URL = "https://github.com/ahmetbugraozcan/DeskCast";
+export const DMG_URL = `${GITHUB_URL}/releases/latest/download/DeskCast.dmg`;
+export const LATEST_RELEASE_URL = "https://api.github.com/repos/ahmetbugraozcan/DeskCast/releases/latest";
+export const FALLBACK_VERSION = "1.1";

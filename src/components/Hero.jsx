@@ -1,11 +1,13 @@
 import { motion, useReducedMotion } from "motion/react";
 import MainFeatureMockup from "./mockups/MainFeatureMockup.jsx";
-import { DMG_URL, VERSION } from "../config.js";
+import { DMG_URL } from "../config.js";
 import { useI18n } from "../i18n.jsx";
+import { useLatestVersion } from "../useLatestVersion.js";
 
 export default function Hero() {
   const reduce = useReducedMotion();
   const { t } = useI18n();
+  const version = useLatestVersion();
   const title = t("hero.title");
   const rise = (delay) => ({
     initial: reduce ? { opacity: 0 } : { opacity: 0, y: 22 },
@@ -41,7 +43,7 @@ export default function Hero() {
           </a>
         </motion.div>
         <motion.p className="hero-meta muted" {...rise(0.24)}>
-          {t("hero.meta", { v: VERSION })}
+          {t("hero.meta", { v: version })}
         </motion.p>
 
         <motion.div
