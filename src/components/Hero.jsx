@@ -57,6 +57,7 @@ export default function Hero() {
           }
         >
           <div className="hero-desktop" aria-hidden="true">
+            <img className="hero-island" src="/screenshots/island-compact.png" alt="" />
             <MainFeatureMockup />
           </div>
         </motion.div>

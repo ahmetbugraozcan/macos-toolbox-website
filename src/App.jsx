@@ -1,7 +1,9 @@
 import "./App.css";
 import Nav from "./components/Nav.jsx";
 import Hero from "./components/Hero.jsx";
+import IslandSection from "./components/IslandSection.jsx";
 import Features from "./components/Features.jsx";
+import ToolsGrid from "./components/ToolsGrid.jsx";
 import Gallery from "./components/Gallery.jsx";
 import VideoSection from "./components/VideoSection.jsx";
 import Download from "./components/Download.jsx";
@@ -13,7 +15,9 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
+        <IslandSection />
         <Features />
+        <ToolsGrid />
         <Gallery />
         <VideoSection />
         <Download />

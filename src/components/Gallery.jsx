@@ -6,12 +6,23 @@ import ImageSearchMockup from "./mockups/ImageSearchMockup.jsx";
 import DropShelfMockup from "./mockups/DropShelfMockup.jsx";
 import MenuBarMockup from "./mockups/MenuBarMockup.jsx";
 import SettingsMockup from "./mockups/SettingsMockup.jsx";
+import AnnotateMockup from "./mockups/AnnotateMockup.jsx";
+import TrimMockup from "./mockups/TrimMockup.jsx";
+import IslandMockup from "./mockups/IslandMockup.jsx";
+
+const LauncherIsland = () => <IslandMockup src="/screenshots/island-launcher.png" alt="DeskCast island panel launcher" />;
+const TimerIsland = () => <IslandMockup src="/screenshots/island-timer.png" alt="DeskCast island timer panel" />;
 import { useI18n } from "../i18n.jsx";
 
 const frames = [
+  { key: "island", Visual: IslandMockup },
   { key: "capture", Visual: CaptureMockup },
   { key: "shelf", Visual: ShelfMockup },
+  { key: "annotate", Visual: AnnotateMockup },
+  { key: "launcher", Visual: LauncherIsland },
   { key: "video", Visual: VideoCaptureMockup },
+  { key: "trim", Visual: TrimMockup },
+  { key: "timer", Visual: TimerIsland },
   { key: "search", Visual: ImageSearchMockup },
   { key: "drop", Visual: DropShelfMockup },
   { key: "menu", Visual: MenuBarMockup },

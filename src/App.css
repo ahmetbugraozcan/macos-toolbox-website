@@ -358,7 +358,7 @@
 
 .product-shot--shelf { width: min(264px, 100%); }
 .product-shot--drop { width: min(380px, 100%); }
-.product-shot--menu { width: min(235px, 100%); }
+
 .product-shot--window { width: 100%; }
 
 .capture-selection-mockup {
@@ -943,3 +943,191 @@
   .lang-switch { margin-left: auto; }
   .nav-cta { margin-left: 12px; }
 }
+
+/* ==================== DYNAMIC ISLAND ==================== */
+.island {
+  background: #000;
+  color: #f5f5f7;
+  overflow: hidden;
+}
+.island-copy { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.island-eyebrow { color: #ff6b81; }
+.island-title { margin-top: 12px; max-width: 18ch; }
+.island-lede { margin-top: 18px; max-width: 52ch; color: #a1a1a6; }
+
+.island-showcase { margin-top: clamp(36px, 5vw, 56px); }
+
+.island-tabs {
+  display: flex;
+  gap: 4px;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.island-tabs::-webkit-scrollbar { display: none; }
+.island-tab {
+  flex: none;
+  border: none;
+  background: transparent;
+  color: #a1a1a6;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 160ms ease, background 200ms ease;
+}
+.island-tab:hover { color: #f5f5f7; }
+.island-tab.is-active { background: #f5f5f7; color: #000; }
+.island-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* A faux desktop: wallpaper, menu bar, and the island hanging from the top. */
+.island-desk {
+  position: relative;
+  margin-top: 22px;
+  aspect-ratio: 980 / 460;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background:
+    radial-gradient(70% 90% at 12% 100%, #ff5f6d 0%, transparent 60%),
+    radial-gradient(60% 80% at 90% 90%, #5b6cff 0%, transparent 60%),
+    radial-gradient(80% 70% at 50% 0%, #2a1f4a 0%, #120d24 60%, #07060d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 50px 100px -40px rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+}
+.island-menubar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(18px, 2.8%, 26px);
+  min-height: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 16px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(20px);
+}
+.island-menubar-dim { font-weight: 400; opacity: 0.8; }
+.island-menubar-apple { font-size: 0.9rem; }
+.island-menubar-clock { margin-left: auto; font-weight: 500; font-variant-numeric: tabular-nums; }
+.island-shot {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  width: calc(var(--island-scale, 0.7) * 100%);
+  height: auto;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
+}
+.island-caption {
+  margin: 18px auto 0;
+  max-width: 60ch;
+  min-height: 3em;
+  text-align: center;
+  color: #a1a1a6;
+  font-size: 1rem;
+}
+
+.island-highlights {
+  margin-top: clamp(40px, 6vw, 72px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.island-card {
+  padding: 22px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+.island-card-title { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; color: #f5f5f7; }
+.island-card-body { margin-top: 6px; font-size: 0.94rem; line-height: 1.5; color: #a1a1a6; }
+
+/* Island captures inside gallery cards. */
+.island-mini {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.island-mini-shot {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Compact island hanging from the top of the hero desktop. */
+.hero-desktop { position: relative; }
+.hero-island {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 50%;
+  width: 42%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* ==================== MORE TOOLS ==================== */
+.tools { background: var(--bg-muted); }
+.tools-title { text-align: center; margin-top: 10px; }
+.tools-grid {
+  margin-top: clamp(36px, 5vw, 60px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.tool-card {
+  padding: 26px;
+  border-radius: var(--radius);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 40px -32px rgba(0, 0, 0, 0.35);
+}
+.tool-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--tool-tint, var(--accent));
+}
+.tool-card--scroll { --tool-tint: #34c759; }
+.tool-card--ocr { --tool-tint: #30b0c7; }
+.tool-card--color { --tool-tint: #8e6cff; }
+.tool-card--pin { --tool-tint: #ff9f0a; }
+.tool-card--finder { --tool-tint: #0a84ff; }
+.tool-card--language { --tool-tint: #ff375f; }
+.tool-title { margin-top: 16px; font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; }
+.tool-body { margin-top: 6px; font-size: 0.95rem; line-height: 1.5; color: var(--ink-soft); }
+
+.product-shot--menu { width: min(320px, 100%); }
+
+@media (max-width: 860px) {
+  .island-highlights,
+  .tools-grid { grid-template-columns: 1fr 1fr; }
+  .island-desk { aspect-ratio: 4 / 3; }
+  /* Narrow screens: enlarge every state alike so panel text stays legible. */
+  .island-shot { width: min(100%, calc(var(--island-scale, 0.7) * 135%)); }
+}
+@media (max-width: 560px) {
+  .island-highlights,
+  .tools-grid { grid-template-columns: 1fr; }
+  .island-desk { aspect-ratio: 1 / 1; }
+}
+
+.annotate-mockup { position: relative; width: 100%; }
+.annotate-marks { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }

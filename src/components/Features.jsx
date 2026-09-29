@@ -5,12 +5,16 @@ import VideoCaptureMockup from "./mockups/VideoCaptureMockup.jsx";
 import ImageSearchMockup from "./mockups/ImageSearchMockup.jsx";
 import DropShelfMockup from "./mockups/DropShelfMockup.jsx";
 import MenuBarMockup from "./mockups/MenuBarMockup.jsx";
+import AnnotateMockup from "./mockups/AnnotateMockup.jsx";
+import TrimMockup from "./mockups/TrimMockup.jsx";
 import { useI18n } from "../i18n.jsx";
 
 const rows = [
   { key: "capture", Visual: CaptureMockup, dark: false },
   { key: "shelf", Visual: ShelfMockup, dark: true, reverse: true },
-  { key: "video", Visual: VideoCaptureMockup, dark: false },
+  { key: "annotate", Visual: AnnotateMockup, dark: false },
+  { key: "video", Visual: VideoCaptureMockup, dark: true, reverse: true },
+  { key: "trim", Visual: TrimMockup, dark: false },
   { key: "search", Visual: ImageSearchMockup, dark: true, reverse: true },
   { key: "drop", Visual: DropShelfMockup, dark: false },
   { key: "menu", Visual: MenuBarMockup, dark: true, reverse: true },

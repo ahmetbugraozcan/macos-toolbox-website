@@ -12,6 +12,7 @@ export default function Nav() {
           <span>DeskCast</span>
         </a>
         <nav className="nav-links">
+          <a href="#island">{t("nav.island")}</a>
           <a href="#features">{t("nav.features")}</a>
           <a href="#gallery">{t("nav.gallery")}</a>
           <a href="#video">{t("nav.video")}</a>

@@ -3,7 +3,7 @@ export default function CaptureMockup() {
     <div className="capture-selection-mockup">
       <img
         className="capture-selection-shot"
-        src="/screenshots/settings.png?v=capture-video"
+        src="/screenshots/settings-menubar.png"
         alt="DeskCast settings inside a selected screenshot region"
       />
       <div className="capture-selection-frame" aria-hidden="true" />
